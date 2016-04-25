@@ -4,10 +4,9 @@ public abstract class Inimigo extends Personagem {
 
 	public Inimigo(String nome, Data dataBatalha, int hp, int sp, boolean bemSucedida) {
 		super(nome, dataBatalha, hp, sp, bemSucedida);
-		this.diminuirHp();
 	}
 
-	public void diminuirHp(int hp){
+	public void diminuirHp(){
 		hp=-5;
 	}
 }

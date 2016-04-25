@@ -3,17 +3,17 @@ package br.ufpa.cbcc.arqueiro;
 public abstract class Personagem {
 
 		private String nome = "Oliver Queen";
-		private int hp = hpMax;
-		private int sp = spMax;
+		protected int hp = hpMax;
+		protected int sp = spMax;
 		private boolean bemSucedida;
-		private final static int hpMax = 20;
-		private final static int spMax = 10;
+		public final static int hpMax = 20;
+		public final static int spMax = 10;
 		
 		public Personagem() {
-			this.nome = nome;
-			this.hp = hp;
-			this.sp = sp;
-			this.bemSucedida = bemSucedida;
+			this.nome = "";
+			this.hp = 20;
+			this.sp = 10;
+			this.bemSucedida = true;
 		}
 		public Personagem(String nome, Data dataBatalha, int hp, int sp, boolean bemSucedida){
 			this.nome = nome;
@@ -21,7 +21,23 @@ public abstract class Personagem {
 			this.sp = sp;
 			this.bemSucedida = bemSucedida;
 		}
-
+		
+		public boolean isBemSucedida() {
+			return bemSucedida;
+		}
+		
+		public void setBemSucedida(boolean bemSucedida) {
+			this.bemSucedida = bemSucedida;
+		}
+		
+		public static int getHpmax() {
+			return hpMax;
+		}
+		
+		public static int getSpmax() {
+			return spMax;
+		}
+		
 		public String getNome(){
 			return nome;
 		}
@@ -54,12 +70,12 @@ public abstract class Personagem {
 			return spMax;
 		}
 
-		public abstract void diminuirHp();
+		public abstract void diminuirHp(int hp);
 		
-		public abstract void diminuirSp();
+		public abstract void diminuirSp(int sp);
 		
-		public abstract void furtividade();
+		public abstract void furtividade(int sp, int hp);
 		
-		public abstract void defesa();
+		public abstract void defesa(boolean bemSucedida);
 
 }

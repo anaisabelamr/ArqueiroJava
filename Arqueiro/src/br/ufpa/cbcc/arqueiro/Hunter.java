@@ -1,8 +1,13 @@
 package br.ufpa.cbcc.arqueiro;
 
-public abstract class Hunter extends Arqueiro implements Ataque {
+public final class Hunter extends Arqueiro implements Ataque {
 	
 	private int armadilha;
+	
+	public Hunter(){
+		super();
+		this.armadilha = 10;
+	}
 	
 	public Hunter(String nome, Data dataBatalha, int hp, int sp, boolean bemSucedida, int armadilha) {
 		super(nome, dataBatalha, hp, sp, bemSucedida);
@@ -31,27 +36,29 @@ public abstract class Hunter extends Arqueiro implements Ataque {
 	
 	public void defesa(boolean bemSucedida){
 		if(bemSucedida == false){
-			diminuirHp();
+			diminuirHp(20);
 			System.out.println("Defesa mal sucedida.");
 		} else{
 			System.out.println("Defesa bem sucedida.");
 		}
 	}
 	
-	public void furtividade(){
+	public void furtividade(int sp, int hp){
 		while((sp <= spMax) && (hp <= hpMax)){
 			System.out.println("MODO FURTIVO - DADOS DO PERSONAGEM");
 			System.out.println("HP = "+ hp);
 			System.out.println("SP = "+ sp);
-			++hp;
-			++sp;
+			hp+=4;
+			sp+=4;
 		}
 		
 	}
 	
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public void atacar(Inimigo inimigo){
+		System.out.println("SOLTANDO A ARMADILHA");
+		decArmadilha();
+		System.out.println("EXPLODINDO EM 3... 2... 1...");
+		System.out.println("BUUUUUM");
+		inimigo.diminuirHp();
 	}
 }

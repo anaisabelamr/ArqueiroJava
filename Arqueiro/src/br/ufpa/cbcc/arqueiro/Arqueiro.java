@@ -1,16 +1,16 @@
 package br.ufpa.cbcc.arqueiro;
 
-import static br.ufpa.cbcc.arqueiro.Personagem.hpMax;
-import static br.ufpa.cbcc.arqueiro.Personagem.spMax;
-
 public abstract class Arqueiro extends Personagem implements Ataque {
 	
 	private int flechas;
+	
+	public Arqueiro() {
+		super();
+	}
 
 	public Arqueiro(String nome, Data dataBatalha, int hp, int sp, boolean bemSucedida) {
 		super(nome, dataBatalha, hp, sp, bemSucedida);
-		this.flechas = flechas;
-		
+		this.flechas = 10;
 	}
 	
 	public void setFlechas(int flechas){
@@ -35,15 +35,15 @@ public abstract class Arqueiro extends Personagem implements Ataque {
 	
 	public void defesa(boolean bemSucedida){
 		if(bemSucedida == false){
-			diminuirHp();
+			diminuirHp(20);
 			System.out.println("Defesa mal sucedida.");
 		} else{
 			System.out.println("Defesa bem sucedida.");
 		}
 	}
 	
-	public void furtividade(int hp, int sp, Personagem.hpMax, Personagem.spMax){
-		while((this.sp <= spMax) && (this.hp <= hpMax)){
+	public void furtividade(int hp, int sp){
+		while((this.sp < spMax) && (this.hp < hpMax)){
 			System.out.println("MODO FURTIVO - DADOS DO PERSONAGEM");
 			System.out.println("HP = "+ hp);
 			System.out.println("SP = "+ sp);
@@ -52,9 +52,10 @@ public abstract class Arqueiro extends Personagem implements Ataque {
 		}
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public void atacar(Inimigo inimigo){
+		System.out.println("PEGA A FLECHA");
+		decFlechas();
+		System.out.println("ATIRANDO EM 3... 2... 1...");
+		inimigo.diminuirHp();
 	}
-
 }
