@@ -14,6 +14,11 @@ public final class Hunter extends Arqueiro {
 		this.armadilha = armadilha;
 	}
 	
+	public Hunter(Hunter copia){
+		super((Arqueiro)copia);
+		this.armadilha = copia.armadilha;
+	}
+	
 	public void setArmadilha(int armadilha){
 		this.armadilha = armadilha;
 	}

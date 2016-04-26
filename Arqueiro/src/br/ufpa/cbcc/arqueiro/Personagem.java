@@ -8,18 +8,29 @@ public abstract class Personagem {
 		private boolean bemSucedida;
 		public final static int hpMax = 20;
 		public final static int spMax = 10;
+		private Data dataBatalha;
 		
 		public Personagem() {
 			this.nome = "";
 			this.hp = 20;
 			this.sp = 10;
 			this.bemSucedida = true;
+			
 		}
 		public Personagem(String nome, Data dataBatalha, int hp, int sp, boolean bemSucedida){
 			this.nome = nome;
 			this.hp = hp;
 			this.sp = sp;
 			this.bemSucedida = bemSucedida;
+			this.dataBatalha = dataBatalha;
+		}
+		
+		public Personagem(Personagem copia){
+			this.nome = copia.nome;
+			this.hp = copia.hp;
+			this.sp = copia.sp;
+			this.bemSucedida = copia.bemSucedida;
+			this.dataBatalha = copia.dataBatalha;
 		}
 		
 		public boolean isBemSucedida() {
@@ -70,10 +81,7 @@ public abstract class Personagem {
 			return spMax;
 		}
 
-		public abstract void diminuirHp(int hp);
-		
-		public abstract void diminuirSp(int sp);
-		
+
 		public abstract void furtividade(int sp, int hp);
 		
 		public abstract void defesa(boolean bemSucedida);

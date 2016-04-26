@@ -14,6 +14,11 @@ public final class AtiradorDeElite extends Arqueiro {
 		this.flechaFogo = flechas;
 	}
 	
+	public AtiradorDeElite(AtiradorDeElite copia){
+		super((Arqueiro)copia);
+		this.flechaFogo = copia.flechaFogo;
+	}
+	
 	public int getFlechaFogo() {
 		return flechaFogo;
 	}

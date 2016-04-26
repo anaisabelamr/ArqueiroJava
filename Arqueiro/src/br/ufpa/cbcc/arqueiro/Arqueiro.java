@@ -13,6 +13,11 @@ public abstract class Arqueiro extends Personagem implements Ataque,Atributos {
 		this.flechas = 10;
 	}
 	
+	public Arqueiro(Arqueiro copia){
+		super((Personagem)copia);
+		this.flechas = copia.flechas;
+	}
+	
 	public void setFlechas(int flechas){
 		this.flechas = flechas;
 	}
