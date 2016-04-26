@@ -1,6 +1,6 @@
 package br.ufpa.cbcc.arqueiro;
 
-public final class Hunter extends Arqueiro implements Ataque {
+public final class Hunter extends Arqueiro {
 	
 	private int armadilha;
 	
@@ -24,14 +24,6 @@ public final class Hunter extends Arqueiro implements Ataque {
 	
 	public void decArmadilha(){
 		--armadilha;
-	}
-	
-	public void diminuirHp(int hp){
-		hp=-2;
-	}
-	
-	public void diminuirSp(int sp){
-		sp=-2;
 	}
 	
 	public void defesa(boolean bemSucedida){

@@ -1,6 +1,6 @@
 package br.ufpa.cbcc.arqueiro;
 
-public final class AtiradorDeElite extends Arqueiro implements Atributos {
+public final class AtiradorDeElite extends Arqueiro {
 	
 	private int flechaFogo;
 
@@ -26,14 +26,6 @@ public final class AtiradorDeElite extends Arqueiro implements Atributos {
 		--flechaFogo;
 	}
 
-	public void diminuirHp(int hp){
-		hp-=4;
-	}
-	
-	public void diminuirSp(int sp){
-		sp-=4;
-	}
-	
 	public void furtividade(int hp, int sp){
 		while((this.sp < spMax) && (this.hp < hpMax)){
 			System.out.println("MODO FURTIVO - DADOS DO PERSONAGEM");
