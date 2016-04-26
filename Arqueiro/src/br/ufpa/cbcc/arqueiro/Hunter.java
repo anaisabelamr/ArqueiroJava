@@ -1,6 +1,6 @@
 package br.ufpa.cbcc.arqueiro;
 
-public final class Hunter extends Arqueiro implements Atributos {
+public final class Hunter extends Arqueiro implements Ataque {
 	
 	private int armadilha;
 	

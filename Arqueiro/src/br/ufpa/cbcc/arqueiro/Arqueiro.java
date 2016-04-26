@@ -1,6 +1,6 @@
 package br.ufpa.cbcc.arqueiro;
 
-public abstract class Arqueiro extends Personagem implements Ataque {
+public abstract class Arqueiro extends Personagem implements Ataque,Atributos {
 	
 	private int flechas;
 	
