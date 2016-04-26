@@ -1,6 +1,6 @@
 package br.ufpa.cbcc.arqueiro;
 
-public final class AtiradorDeElite extends Arqueiro implements Ataque {
+public final class AtiradorDeElite extends Arqueiro implements Atributos {
 	
 	private int flechaFogo;
 
